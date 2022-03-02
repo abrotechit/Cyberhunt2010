@@ -1,36 +1,36 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wayagram-home-website
+  name: wayabank-home-website
   labels:
-    app: wayagram-home-website
+    app: wayabank-home-website
 spec:
   ports:
   - name: http
     port: 80
     targetPort: 80
   selector:
-    app: wayagram-home-website
+    app: wayabank-home-website
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wayagram-home-website
+  name: wayabank-home-website
   labels:
-    app: wayagram-home-website
+    app: wayabank-home-website
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: wayagram-home-website
+      app: wayabank-home-website
   template:
     metadata:
       labels:
-        app: wayagram-home-website
+        app: wayabank-home-website
     spec:
       containers:
-      - name: wayagram-home-website
-        image: 863852973330.dkr.ecr.eu-west-2.amazonaws.com/wayagram-home-website:imgtag
+      - name: wayabank-home-website
+        image: 863852973330.dkr.ecr.eu-west-2.amazonaws.com/wayabank-home-website:imgtag
         env:
         - name: MESSAGING_GROUP_ID
           value: "events" 

@@ -61,7 +61,7 @@ function SignIn() {
           <div id='loginSection' className='login row justify-content-center' >
             <form onSubmit={handleSubmit}>
               <div className='text-center pb-2'>
-                <img alt='wayagram-image' src='wayapaychatLogo.png' />
+                <img src='wayapaychatLogo.png' />
               </div>
               <h5 className='text-center py-2'>Login</h5>
               <div className='inputGroup text-left py-1'>
@@ -72,20 +72,20 @@ function SignIn() {
               <div className='inputGroup text-left py-1'>
                 <label htmlFor='userpassword'>Password</label>
                 <br />
-                <span className='iconeye' onClick={(e) => { togglePasswordVisibility(e, 'login') }}> <img alt='wayagram-image' src='/see.png' /></span>
+                <span className='iconeye' onClick={(e) => { togglePasswordVisibility(e, 'login') }}> <img src='/see.png' /></span>
                 <input id="userpassword" type='password' placeholder='Password' required onChange={(e) => setLoginData({ ...loginData, password: e.target.value })} />
                 <div className=' mt-3'>
-                  <button type='submit' id='loginBtn' className='orange '>{loading ? "Loading..." : "Sign In"} <span><img alt='wayagram-image' src='/rightArr.png' /></span></button>
+                  <button type='submit' id='loginBtn' className='orange '>{loading ? "Loading..." : "Sign In"} <span><img src='/rightArr.png' /></span></button>
                 </div>
                 <div className='row justify-content-center loginContinue pl-0 pr-4 mr-4'>
                   <p style={{ color: '#2626BC', fontSize: '13px' }} className='py-3 col-sm-9 text-center pl-4'>Or continue with</p>
                 </div>
                 <div className='justify-content-center loginSocial row mr-2'>
                   <button className='col-sm-5 btn pl-0 mr-4 socialBtn'>
-                    <span className='pr-3'><img alt='wayagram-image' src='fbIcon.png' /> </span>Facebook
+                    <span className='pr-3'><img src='fbIcon.png' /> </span>Facebook
                   </button>
                   <button className='col-sm-5 btn mr-4 socialBtn' >
-                    <span className='pr-3'><img alt='wayagram-image' src='googleIcon.png' /></span>Google
+                    <span className='pr-3'><img src='googleIcon.png' /></span>Google
                   </button>
                 </div>
                 <div className='row justify-content-center pl-0 '>

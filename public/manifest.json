@@ -1,6 +1,6 @@
 {
-  "short_name": "Wayagram",
-  "name": "The home page for Wayagram",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

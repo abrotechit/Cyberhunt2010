@@ -1,0 +1,174 @@
+#solutionPage {
+  width: 100%;
+  display: flex;
+  min-width: 576px;
+  flex-direction: column;
+  .sp-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .sp-top {
+      width: 100%;
+      display: flex;
+      margin-bottom: 30px;
+      align-items: center;
+      .spt-text {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        padding-top: 103px;
+        padding-left: 150px;
+        padding-right: 100px;
+        .sptt-title {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 48px;
+          line-height: 56px;
+          color: #4f4f4f;
+          margin-bottom: 20px;
+        }
+        .sptt-subTitle {
+          font-family: Sarabun;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 22px;
+          line-height: 35px;
+          color: #4f4f4f;
+        }
+      }
+      .spt-img {
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+      }
+    }
+    .sp-bottom {
+      padding-left: 100px;
+      padding-right: 100px;
+      padding-bottom: 71px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .spb-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 53px 50px;
+        background: rgba(250, 250, 250, 0.6);
+        border: 1px solid #d3d3d3;
+        box-sizing: border-box;
+        border-radius: 8px;
+        width: 32%;
+        margin-bottom: 22px;
+        .spbi-title {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 18px;
+          line-height: 29px;
+          color: #4f4f4f;
+          margin-bottom: 12px;
+          text-transform: uppercase;
+        }
+        .spbi-text {
+          font-family: Sarabun;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 39px;
+          text-align: center;
+          color: #4f4f4f;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 916px) {
+  #solutionPage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-width: 576px;
+    .sp-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      .sp-top {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        .spt-text {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          padding: 25px;
+          .sptt-title {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 48px;
+            line-height: 56px;
+            color: #4f4f4f;
+            margin-bottom: 20px;
+            text-align: center;
+          }
+          .sptt-subTitle {
+            font-family: Sarabun;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 22px;
+            line-height: 35px;
+            color: #4f4f4f;
+          }
+        }
+        .spt-img {
+          display: flex;
+          justify-content: center;
+          padding-top: 30px;
+        }
+      }
+      .sp-bottom {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        .spb-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 53px 50px;
+          background: rgba(250, 250, 250, 0.6);
+          border: 1px solid #d3d3d3;
+          box-sizing: border-box;
+          border-radius: 8px;
+          width: 100%;
+          margin-bottom: 22px;
+          .spbi-title {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 29px;
+            color: #4f4f4f;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+          }
+          .spbi-text {
+            font-family: Sarabun;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 39px;
+            text-align: center;
+            color: #4f4f4f;
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@ pipeline {
         AWS_DEFAULT_REGION = credentials('AWS_DEFAULT_REGION')
         CLUSTER_NAME = credentials('CLUSTER_NAME')
         REGISTRY = credentials('REGISTRY')
-        SERVICE_NAME = 'wayagram-home-website'
+        SERVICE_NAME = 'wayabank-home-website'
         VERSION = sh (script: 'git rev-parse HEAD', returnStdout: true).trim().take(10)
     }
 
@@ -21,33 +21,33 @@ pipeline {
             }
         }*/
 
-        stage('Update Staging Config') { 
-            when {
-                branch 'staging'
+        stage("Build For Staging") {
+            environment { 
+                NAMESPACE = 'staging'
+                REACT_APP_CORPORATE_APP = 'https://business.staging.wayabank.ng'
+                REACT_APP_PERSONAL_APP = 'https://ibank.staging.wayabank.ng'
+                REACT_APP_BASE_URL = 'https://services.staging.wayabank.ng'
+                IS_LIVE = 'false'
             }
-            steps {
+            steps{
                 script {
                     sh '''
-                        sed -i "s/domain/app.staging.wayagram.ng/" .env
-                        '''
+                        sudo npm install
+                        sudo npm run build
+                    '''
+                    echo 'Build with Nodejs'
                 }
-            }
+            }   
         }
-
-        stage('Update Production Config') { 
-            when {
-                branch 'production'
+        
+        stage("Build for Production") {
+            environment { 
+                NAMESPACE = 'production'
+                REACT_APP_CORPORATE_APP = 'https://business.wayabank.ng'
+                REACT_APP_PERSONAL_APP = 'https://ibank.wayabank.ng'
+                REACT_APP_BASE_URL = 'https://services.wayabank.ng'
+                IS_LIVE = 'true'
             }
-            steps {
-                script {
-                    sh '''
-                        sed -i "s/domain/app.wayagram.ng/" .env
-                        '''
-                }
-            }
-        }
-
-        stage("build") {
             steps{
                 script {
                     sh '''
@@ -86,6 +86,7 @@ pipeline {
         stage('Deploy to Staging') {
             environment { 
                 NAMESPACE = 'staging'
+                
             }
             when {
                 branch 'staging'
@@ -103,6 +104,7 @@ pipeline {
         stage('Deploy to Production') {
             environment { 
                 NAMESPACE = 'production'
+                
             }
             when {
                 branch 'production'

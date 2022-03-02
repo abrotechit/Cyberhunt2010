@@ -19,11 +19,8 @@ export async function getSiteApi(url) {
 }
 
 export async function sendData(payload) {
-  const {data} = payload
-  const url = 'https://services.staging.mywayapay.com/notification-service/v2/api-docs/email-notification';
-  const mailData = {data: {message: data.message, names: [{email: data.email, fullName:data.name}], subject: data.subject}, eventType: "EMAIL", initiator: data.email}
-  return axios
-    .post(url, mailData)
+  return apiClient
+    .post(payload.url, payload.data)
     .then(response => {
       if (response) {
         const { data, status } = response
