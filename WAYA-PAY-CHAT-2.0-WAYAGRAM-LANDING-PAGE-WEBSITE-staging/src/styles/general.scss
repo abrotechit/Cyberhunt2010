@@ -1,0 +1,100 @@
+// miscellaneous stylings
+.text-orange{
+    color: #FF4400;
+}
+.text-silver{
+    color: silver;
+}
+.bg-silver{
+    background-color: silver;
+}
+.bg-orange{
+    background-color: #FF4400;
+}
+.bg-orange-fade{
+    background-color: #FE7756;
+}
+.bg-faintblue{
+    background-color: aliceblue;
+}
+.bg-orange-faint{
+    background-color: #f6ecea;
+}
+.border-start.border-5.border-orange{
+    border-color: #FE7756;
+}
+
+.btn-orange{
+    background-color: #FF4400;
+    color: #fff;
+    border-radius: 4px;
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+    font-size: 14px;
+    transition: all 1s ease-out;
+}
+.btn-orange:hover{
+    background-color: #fff;
+    color: #FF4400;
+}
+
+.btn-link{
+    color: #FF4400;
+    transition: all 1s ease-out;
+}
+
+.btn-text-orange{
+    color: grey;
+}
+.btn-text-orange:focus,.btn-text-orange:hover{
+    color: #FF4400;
+}
+
+.list-group-item-info{
+    background-color: aliceblue;
+}
+ 
+// .fs-1{
+//     font-size: 30px;
+//     font-weight: 800;
+// }
+// .fs-2{
+//     font-size: 27px;
+// }
+// .fs-3{
+//     font-size: 24px;
+// }
+// .fs-4{
+//     font-size: 21px;
+// }
+// .fs-5{
+//     font-size: 18px;
+// }
+// .fs-6{
+//     font-size: 15px;
+// }
+.fw-bold{
+    font-weight: 800;
+}
+.fw-sm{
+    font-weight: 600;
+}
+.fw-bolder{
+    font-weight: 900;
+}
+.lh-1{
+    line-height: 18px;
+}
+
+
+.rounded-5{
+    border-radius: 15px;
+}
+.rounded-w-top{
+    border-radius: 15px 15px 0 0;
+}
+.rounded-w-bottom{
+    border-radius: 0 0 15px 15px;
+}
+
+  

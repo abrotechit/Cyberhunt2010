@@ -1,0 +1,193 @@
+#wayachat{
+    .wayagramJumbotron{
+        img{
+            max-width: 80%;
+            transform: rotate(12deg);
+        }
+    }
+}
+
+.lighter{
+    font-family: 'Sarabun', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 160%;
+    color: #BDBDBD;
+}
+
+@media only screen and (max-width: 425px){
+    #wayachat{
+        div.wayagramJumbotron{
+            background-color: #fff;
+            background-image: none !important;
+            h2{
+              font-family: 'Open Sans', sans-serif;
+              font-weight: bold;
+              font-size: 23px;
+        
+             }
+             h2+p{
+              font-size: 13px;
+             }
+            img{
+                max-width: 50% !important;
+                margin-left: 44px;
+            }
+          }
+    }
+
+}
+
+.last-jumboWrapper {
+    .last-jumbotron-left {
+      background: #fff;
+      background-repeat: repeat;
+      height: 236px;
+      position: relative;
+  
+      .download {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 72px;
+        line-height: 123px;
+        letter-spacing: -0.03em;
+        color: #ff4400;
+        position: absolute;
+        left: 50%;
+        top: 105px;
+      }
+      img {
+        position: absolute;
+        left: 84px;
+        z-index: 1;
+        top: 55px;
+      }
+    }
+    .last-jumbotron-right {
+      background-color: #ff4400;
+      background-blend-mode: darken;
+      background-repeat: no-repeat;
+      border-radius: 0px 0px 0px 82px;
+      position: relative;
+      height: 410px;
+      display: flex;
+      justify-content: flex-end;
+      .theApp {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 72px;
+        line-height: 123px;
+        letter-spacing: -0.03em;
+        color: #fff;
+        position: absolute;
+        left: 50%;
+      }
+      .bottomCont {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        align-self: center;
+      }
+  
+      h1 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 800;
+        font-size: 68px;
+        line-height: 102.6%;
+        letter-spacing: -0.03em;
+        color: #ffffff;
+      }
+      p {
+        font-family: 'Sarabun', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: #ffffff;
+        max-width: 400px;
+      }
+    }
+  }
+  
+  .sub-footer {
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-right: 100px;
+    .top-subfooter {
+      width: 100%;
+      padding-top: 27px;
+      padding-bottom: 27px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 68, 0, 0.1);
+      margin-bottom: 55px;
+      img {
+        align-self: center;
+        margin-right: 38px;
+      }
+      .tsf-text {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        color: #333333;
+        align-self: center;
+      }
+    }
+    .bottom-subfooter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 70px;
+      .bsf-item {
+        padding: 19px 37px;
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        border: 0.803653px solid #e0e0e0;
+        box-sizing: border-box;
+        border-radius: 3.21461px;
+        width: 32%;
+        height: 200px;
+        img {
+          margin-bottom: 15px;
+          // width: 95px;
+          height: 32px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .bsfi-cont {
+          margin-bottom: 30px;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 13px;
+          line-height: 16px;
+          text-align: center;
+          color: #828282;
+          flex-basis: 60%;
+        }
+        .bsfi-foot {
+          background: #ff4400;
+          border-radius: 3.21461px;
+          padding: 8px 19px;
+          // font-family: Lato;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 11.2511px;
+          line-height: 14px;
+          /* identical to box height */
+          text-align: center;
+          letter-spacing: 0.375958px;
+          width: max-content;
+          color: #ffffff;
+          margin-left: auto;
+          margin-right: auto;
+          cursor: pointer;
+        }
+      }
+    }
+  }

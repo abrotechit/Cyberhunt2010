@@ -1,0 +1,138 @@
+#contactPage{
+    margin-bottom: 7em;
+    .actual-content{
+        margin-left: 4em;
+    }
+    h3, h4 {
+        color: #FF4400;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        padding-top: 4%;
+        padding-bottom: 5%;
+    }
+}
+
+p{
+    font-size: 15px;
+    color: #333333;
+    font-family: 'Sarabun', sans-serif;
+}
+address{
+    p{
+        color: #828282
+    }
+    h5{
+      
+        color: #4F4F4F;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+    }
+     img{
+        max-height: 20px;
+    max-width: 45px !important;
+    }
+}
+.gmap_canvas{
+    overflow:hidden;
+    background:none!important;
+   
+    iframe{
+        height:330px;
+        width:540px;
+    }
+}
+
+
+form#contactForm{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    textarea{
+        max-width: 80%;
+        height: 160px;
+        padding-left: 33px;
+        padding-top: 10px;
+        outline: none;
+        margin-block-end: 32px;
+        box-shadow: 0px 0px 20px rgba(36, 36, 56, 0.10);
+    }
+    textarea:active, textarea:hover{
+        box-shadow: 0px 0px 10px #ff4400a2;     
+    }
+    input{
+        max-width: 80%;
+        height: 50px;
+        border:none;
+        outline: none;
+        margin-block-end: 32px;
+        background-color: #EBEBEB;
+        padding-left: 33px;
+        ::placeholder{
+            color:  #4F4F4F;
+            font-family: 'Sarabun', sans-serif;
+            font-size: 14px !important;
+            line-height: 19px;
+        }
+    }
+   
+}
+
+@media only screen and (max-width: 768px){
+    #contactPage{
+        h3{
+            font-size: 18px;
+        }
+        h3+p{
+            font-size: 15px; 
+        }
+        h4{
+            font-size: 19px;
+        }
+        h5{
+            font-size: 17px;
+        }
+        h5 + p, p:only-child{
+            font-size: 13px;
+        }
+    }
+}
+
+@media only screen and (max-width: 425px){
+    #contactPage{
+        .actual-content{
+            margin-left: 0em;
+        }
+      div.first{
+          padding-right: 10%;
+          padding-top: -4%;
+          padding-bottom: 15%;
+          h3 + p{
+            padding-bottom: -4%;
+            padding-top: -4%;
+          }
+          address{
+              div.text{
+                  display: inline;
+                  max-width: 70%;
+                  margin-top: -6%;
+                  margin-left: 10% !important;
+              }
+          }
+      }
+      form#contactForm{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        margin-bottom: 10%;
+        textarea{
+            max-width: 90%;
+        }
+        input{
+            max-width: 90%;
+        }
+        button.orange{
+            width:90%
+        }
+    }
+    }
+}
