@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Modal } from 'reactstrap';
-import Button from '../../Button';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Modal } from "reactstrap";
+import Button from "../../Button";
 
 export default function ResendOtp(props) {
   const {
@@ -72,9 +72,9 @@ export default function ResendOtp(props) {
 }
 
 ResendOtp.defaultProps = {
-  title: '',
-  description: '',
-  buttonLabel: 'Send',
+  title: "",
+  description: "",
+  buttonLabel: "Send",
 };
 
 ResendOtp.propTypes = {

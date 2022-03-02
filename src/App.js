@@ -45,10 +45,10 @@ function App() {
           <Route exact path="/contact">
             <ContactPage />
           </Route>
-          <Route exact path='/solution'>
+          <Route exact path="/solution">
             <SolutionPage />
           </Route>
-          <Route exact path='/merchant'>
+          <Route exact path="/merchant">
             <MerchantPage />
           </Route>
           <Route exact path="/commerce">
@@ -90,7 +90,7 @@ function App() {
           <Route exact path="/privacy-page">
             <PrivacyPage />
           </Route>
-          <Route path={`/blogs/:topicId`}>
+          <Route path="/blogs/:topicId">
             <SinglePost />
           </Route>
           <Route path="/login" component={Login} />

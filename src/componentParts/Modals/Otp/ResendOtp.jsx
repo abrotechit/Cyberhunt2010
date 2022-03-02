@@ -1,8 +1,8 @@
-import React, { useState, useContext } from 'react';
-import PropTypes from 'prop-types';
-import { Modal } from 'reactstrap';
-import Button from '../../Button';
-import { ProfileContext } from '../../../../store/context/ProfileContext';
+import React, { useState, useContext } from "react";
+import PropTypes from "prop-types";
+import { Modal } from "reactstrap";
+import Button from "../../Button";
+import { ProfileContext } from "../../../../store/context/ProfileContext";
 
 export default function ResendOtp(props) {
   const {
@@ -14,7 +14,7 @@ export default function ResendOtp(props) {
     handleSubmit,
     loading,
   } = props;
-  const [option, setOption] = useState('');
+  const [option, setOption] = useState("");
   const {
     profile: { phoneNumber, email },
   } = useContext(ProfileContext);
@@ -92,9 +92,9 @@ export default function ResendOtp(props) {
 }
 
 ResendOtp.defaultProps = {
-  title: '',
-  description: '',
-  buttonLabel: 'Send',
+  title: "",
+  description: "",
+  buttonLabel: "Send",
 };
 
 ResendOtp.propTypes = {

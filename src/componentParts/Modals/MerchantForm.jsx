@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import swal from 'sweetalert';
-import validator from 'validator';
-import 'react-phone-number-input/style.css';
-import PhoneInput from 'react-phone-number-input';
-import Button from '../Button';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import swal from "sweetalert";
+import validator from "validator";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
+import Button from "../Button";
 
 export default function MerchantForm(props) {
   const { setPage, setData, data, businessTypes } = props;
@@ -35,24 +35,24 @@ export default function MerchantForm(props) {
 
   return (
     <form>
-      <div className='inputbox-with-one-input'>
+      <div className="inputbox-with-one-input">
         <input
-          placeholder='Organization Name'
-          type='text'
+          placeholder="Organization Name"
+          type="text"
           onChange={(e) => {
             setData({ ...data, orgName: e.target.value });
           }}
         />
       </div>
 
-      <div className='inputbox-with-one-input'>
+      <div className="inputbox-with-one-input">
         <select
           value={data.businessType}
           onChange={(e) => {
             setData({ ...data, businessType: e.target.value });
           }}
         >
-          <option value='' selected data-default hidden>
+          <option value="" selected data-default hidden>
             Business Type
           </option>
           {businessTypes.length
@@ -61,24 +61,24 @@ export default function MerchantForm(props) {
                   {item.businessType}
                 </option>
               ))
-            : ''}
+            : ""}
         </select>
       </div>
 
-      <div className='inputbox-with-one-input'>
+      <div className="inputbox-with-one-input">
         <input
-          placeholder='Organization Email Address'
-          type='text'
+          placeholder="Organization Email Address"
+          type="text"
           onChange={(e) => {
             setData({ ...data, orgEmail: e.target.value });
           }}
         />
       </div>
 
-      <div className='inputbox-with-one-input'>
+      <div className="inputbox-with-one-input">
         <PhoneInput
-          placeholder='Organization Phone Number'
-          defaultCountry='NG'
+          placeholder="Organization Phone Number"
+          defaultCountry="NG"
           international
           value={data.orgPhone}
           onChange={(e) => setData({ ...data, orgPhone: e })}
@@ -95,31 +95,31 @@ export default function MerchantForm(props) {
         </span>
       </div> */}
 
-      <div className='submit-modal-btn-wrap'>
+      <div className="submit-modal-btn-wrap">
         <Button
-          type='button'
+          type="button"
           loading={loading}
-          content='Next'
+          content="Next"
           onClick={() => {
             setLoading(true);
             // console.log(data);
             if (validator.isEmpty(data.orgName)) {
-              swal('Oops!', 'Organization name cannot be empty', 'error');
+              swal("Oops!", "Organization name cannot be empty", "error");
               setLoading(false);
               return;
             }
             if (validator.isEmpty(data.businessType)) {
-              swal('Oops!', 'Business type cannot be empty', 'error');
+              swal("Oops!", "Business type cannot be empty", "error");
               setLoading(false);
               return;
             }
             if (validator.isEmpty(data.orgEmail)) {
-              swal('Oops!', 'Organization email cannot be empty', 'error');
+              swal("Oops!", "Organization email cannot be empty", "error");
               setLoading(false);
               return;
             }
             if (validator.isEmpty(data.orgPhone)) {
-              swal('Oops!', 'Organization phone cannot be empty', 'error');
+              swal("Oops!", "Organization phone cannot be empty", "error");
               setLoading(false);
               return;
             }

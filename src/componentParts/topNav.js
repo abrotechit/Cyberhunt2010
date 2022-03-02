@@ -17,7 +17,7 @@ function TopNav(params) {
     data.state === "hasValue" && data.contents ? data.contents.data : [];
   const categories =
     dataC.state === "hasValue" && dataC.contents ? dataC.contents.data : [];
-  let location = useLocation();
+  const location = useLocation();
 
   return (
     <nav
@@ -43,7 +43,7 @@ function TopNav(params) {
         aria-label="Toggle navigation"
       >
         <span className="">
-          <img src="/menu-icon.png"></img>{" "}
+          <img src="/menu-icon.png" />{" "}
         </span>
       </button>
       <div
@@ -263,7 +263,7 @@ function TopNav(params) {
               LOGIN
             </a>
           </li>
-          <li className={`nav-item link-btn`}>
+          <li className="nav-item link-btn">
             <a className="nav-link" href="/signup">
               REGISTER
             </a>

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Modal } from 'reactstrap';
-import Button from '../../Button';
+import React from "react";
+import { Modal } from "reactstrap";
+import Button from "../../Button";
 
 export default function VerifyOtp(props) {
   const {

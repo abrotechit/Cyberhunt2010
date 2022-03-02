@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './index.scss';
-import Button from '../Button';
+import React from "react";
+import PropTypes from "prop-types";
+import "./index.scss";
+import Button from "../Button";
 
 function StepButton({ title, onClick, className, loading }) {
   return (
-    <div className='w-100 mt-2 text-center'>
+    <div className="w-100 mt-2 text-center">
       <Button
-        type='button'
+        type="button"
         loading={loading}
         disabled={loading || false}
         onClick={onClick}
