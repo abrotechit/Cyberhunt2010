@@ -6,9 +6,9 @@ metadata:
     app: reactjs-new-website
 spec:
   ports:
-  - name: http
-    port: 80
-    targetPort: 80
+    - name: http
+      port: 80
+      targetPort: 80
   selector:
     app: reactjs-new-website
 ---
@@ -30,13 +30,13 @@ spec:
         app: reactjs-new-website
     spec:
       containers:
-      - name: reactjs-new-website
-        image: 863852973330.dkr.ecr.eu-west-2.amazonaws.com/reactjs-new-website:latest
-        env:
-        - name: MESSAGING_GROUP_ID
-          value: "events" 
-        ports: 
-        - name: http
-          containerPort: 80
+        - name: reactjs-new-website
+          image: 863852973330.dkr.ecr.eu-west-2.amazonaws.com/reactjs-new-website:latest
+          env:
+            - name: MESSAGING_GROUP_ID
+              value: "events"
+          ports:
+            - name: http
+              containerPort: 80
       imagePullSecrets:
-      - name: dynamowit
+        - name: dynamowit

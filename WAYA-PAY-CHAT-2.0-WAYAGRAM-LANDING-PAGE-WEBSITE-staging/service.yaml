@@ -6,9 +6,9 @@ metadata:
     app: wayagram-home-website
 spec:
   ports:
-  - name: http
-    port: 80
-    targetPort: 80
+    - name: http
+      port: 80
+      targetPort: 80
   selector:
     app: wayagram-home-website
 ---
@@ -29,13 +29,13 @@ spec:
         app: wayagram-home-website
     spec:
       containers:
-      - name: wayagram-home-website
-        image: 863852973330.dkr.ecr.eu-west-2.amazonaws.com/wayagram-home-website:imgtag
-        env:
-        - name: MESSAGING_GROUP_ID
-          value: "events" 
-        ports: 
-        - name: http
-          containerPort: 80
+        - name: wayagram-home-website
+          image: 863852973330.dkr.ecr.eu-west-2.amazonaws.com/wayagram-home-website:imgtag
+          env:
+            - name: MESSAGING_GROUP_ID
+              value: "events"
+          ports:
+            - name: http
+              containerPort: 80
       imagePullSecrets:
-      - name: dynamowit
+        - name: dynamowit

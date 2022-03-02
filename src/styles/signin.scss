@@ -1,283 +1,278 @@
-#signIn{
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-top: 2%;
+#signIn {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 2%;
 }
 
-.login form{
-    padding-top: 3em;
-    padding-bottom: 1em;
+.login form {
+  padding-top: 3em;
+  padding-bottom: 1em;
+  background-color: white;
+  justify-content: center;
+  width: 35vw;
+  border-radius: 10px;
+  img:first-of-type {
+    max-width: 140px;
+  }
+  button#loginBtn {
+    margin-top: 2em;
+    width: 360px !important;
+  }
+  .single {
+    font-family: "Sarabun", sans-serif;
+    padding-top: 5% !important;
+  }
+  .inputGroup {
+    padding-left: 4em;
+    position: relative;
+    label {
+      font-family: "Sarabun", sans-serif;
+      font-size: 14px;
+      color: #333333;
+    }
+    input {
+      height: 50px;
+      width: 360px !important;
+      border: none;
+      outline: none;
+      padding-left: 33px;
+    }
+    span.iconeye {
+      cursor: pointer;
+      position: absolute;
+      top: 14%;
+      right: 18%;
+    }
+  }
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+input {
+  background-color: white !important;
+  border: 0.4px solid #bababa !important;
+  border-radius: 5px;
+}
+input::placeholder {
+  font-size: 13px;
+  color: #c9c8c8 !important;
+}
+
+button.socialBtn {
+  transition: all 1s easeout;
+  img {
+    max-width: 26px !important;
+  }
+  width: 168px;
+  border: 0.5px solid #023e4f8c;
+  border-radius: 4px;
+  color: #023e4f;
+  font-size: 12px;
+  align-items: center;
+}
+
+button.socialBtn:hover,
+input:focus {
+  box-shadow: 0px 0px 5px #ff4400a2;
+}
+
+#signUp {
+  h3 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    color: #fff;
+  }
+  h3 + p {
+    font-size: 15px;
+    color: #fff;
+    font-family: "Sarabun", sans-serif;
+  }
+  form {
     background-color: white;
     justify-content: center;
-    width: 35vw;
+    width: 40vw;
+    padding-top: 2em;
+    padding-left: 4em;
+    padding-bottom: 1.5em;
     border-radius: 10px;
-    img:first-of-type {
-        max-width: 140px;
+    input[type="checkbox"] {
+      cursor: pointer;
     }
-    button#loginBtn{
-        margin-top: 2em;
-        width: 360px !important;
+    label {
+      font-family: "Sarabun", sans-serif;
+      font-size: 13px;
+      color: #3f3f3f;
+      span {
+        font-style: italic;
+        color: #2626bc;
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
-    .single{
-        font-family: 'Sarabun', sans-serif;
-        padding-top: 5% !important;
-    }
-    .inputGroup{
-        padding-left: 4em;
-        position: relative;
-       label{
-        font-family: 'Sarabun', sans-serif;
-        font-size: 14px;
-        color: #333333;
-       }
-       input{
+    .inputGroup {
+      display: grid;
+      grid-template-columns: repeat(1fr);
+      grid-column-gap: 0;
+      margin-bottom: 20px;
+      position: relative;
+      input {
         height: 50px;
-        width: 360px !important;
-        border:none;
+        width: 430px !important;
+        border: none;
         outline: none;
         padding-left: 33px;
-       }
-       span.iconeye{
+      }
+      span.iconeye {
         cursor: pointer;
-           position:absolute;
-           top:14%;
-           right: 18%;
-       }
+        position: absolute;
+        top: 20%;
+        right: 15%;
+      }
     }
-}
-
-.row{
-    margin-left: 0;
-    margin-right: 0;
-}
-
-input{
-    background-color: white !important;
-    border: 0.4px solid #BABABA  !important;
-     border-radius: 5px;
-    
- }
- input::placeholder{
-    font-size: 13px;
-    color: #C9C8C8 !important;
- }
-
-button.socialBtn{
-    transition: all 1s easeout;
-    img{
-        max-width: 26px !important;
+    .name {
+      width: 430px;
+      input {
+        height: 50px;
+        width: 210px;
+        border: none;
+        outline: none;
+        padding-left: 33px;
+      }
     }
-    width: 168px;
-    border: 0.5px solid #023e4f8c;
-    border-radius: 4px;
-    color: #023E4F;
-    font-size: 12px;
-    align-items: center;
-}
-
-button.socialBtn:hover, input:focus{
-    box-shadow: 0px 0px 5px #ff4400a2;     
-}
-
-#signUp{
-    h3{
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 800;
-        font-size: 40px;
-        color: #fff;
+    img:first-of-type {
+      max-width: 140px;
     }
-    h3+p{
-        font-size: 15px;
-        color: #fff;
-        font-family: 'Sarabun', sans-serif;
-       }
-    form{
-        background-color: white;
-        justify-content: center;
-        width: 40vw;
-        padding-top: 2em;
-        padding-left: 4em;
-        padding-bottom: 1.5em;
-        border-radius: 10px;
-        input[type='checkbox']{
+    button#signupBtn {
+      width: 430px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .login form {
+    width: 100vw;
+    border-radius: 0px;
+    .inputGroup {
+      padding-left: 12em;
+      position: relative;
+      span.iconeye {
+        cursor: pointer;
+        position: absolute;
+        top: 13%;
+        right: 31%;
+      }
+    }
+    .loginContinue {
+      margin-right: 180px !important;
+    }
+    .loginSocial {
+      margin-right: 180px !important;
+    }
+    .single {
+      margin-right: 22vw !important;
+    }
+  }
+  #signIn {
+    padding-top: 0px;
+    #signUp {
+      justify-content: start !important;
+      form {
+        border-radius: 0 !important;
+      }
+      .part-text {
+        display: none;
+      }
+      form {
+        width: 130vw;
+        padding-left: 30%;
+      }
+      .continueText {
+        margin-right: 410px !important;
+      }
+      .sociallinks {
+        margin-right: 400px !important;
+      }
+      button.socialBtn {
+        max-width: 200px !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .login form {
+    .inputGroup {
+      padding-left: 0.5em;
+      margin-right: 1vw;
+      position: relative;
+      span.iconeye {
+        cursor: pointer;
+        position: absolute;
+        top: 12%;
+        right: 5%;
+      }
+    }
+    .loginContinue {
+      margin-right: 0px !important;
+    }
+    .loginSocial {
+      margin-right: 0px !important;
+      width: 110vw;
+    }
+    button.socialBtn {
+      max-width: 170px !important;
+    }
+    .single {
+      margin-right: 2vw !important;
+    }
+  }
+
+  #signIn {
+    #signUp {
+      form {
+        width: 100vw;
+        padding-left: 6% !important;
+        .inputGroup {
+          input {
+            width: 90vw !important;
+          }
+          span.iconeye {
             cursor: pointer;
+            position: absolute;
+            top: 20%;
+            right: 10%;
+          }
         }
-        label{         
-            font-family: 'Sarabun', sans-serif;
-            font-size: 13px;
-            color: #3F3F3F;
-            span{
-                font-style: italic;
-                color: #2626BC;
-                text-decoration: underline;
-                cursor: pointer;
-            }
+        .name {
+          width: 90vw;
+          input {
+            height: 50px;
+            width: 100%;
+          }
+          input:first-of-type {
+            margin-bottom: 25px;
+          }
+          input:nth-of-type(2) {
+            margin-left: -1px !important;
+          }
         }
-        .inputGroup{
-            display:grid;
-            grid-template-columns: repeat(1fr);
-            grid-column-gap: 0;
-            margin-bottom: 20px;
-            position: relative;
-            input{
-                height: 50px;
-                width: 430px !important;
-                border:none;
-                outline: none;
-                padding-left: 33px;
-            }
-            span.iconeye{
-                cursor: pointer;
-                   position:absolute;
-                   top:20%;
-                   right: 15%;
-               }
+        button#signupBtn {
+          width: 90vw !important;
         }
-        .name{
-            width: 430px;
-            input{
-                height: 50px;
-                width: 210px;
-                border:none;
-                outline: none;
-                padding-left: 33px;
-            }
+        .continueText {
+          width: 90vw;
+          margin-left: 10px;
         }
-        img:first-of-type {
-            max-width: 140px;
+        .sociallinks {
+          width: 100vw;
         }
-        button#signupBtn{
-            width: 430px !important;
-        }
+      }
     }
+  }
 }
-
-@media only screen and (max-width: 768px){
-        .login form{
-            width: 100vw;
-            border-radius: 0px;
-            .inputGroup{
-                padding-left: 12em;
-                position: relative;
-                span.iconeye{
-                    cursor: pointer;
-                       position:absolute;
-                       top:13%;
-                       right: 31%;
-                   }
-            }
-            .loginContinue{
-                margin-right:180px !important;
-            }
-            .loginSocial{
-                margin-right:180px !important;
-            }
-            .single{
-                margin-right: 22vw !important;
-            }
-        }
-    #signIn{
-        padding-top: 0px;
-        #signUp{
-            
-            justify-content: start !important;
-            form{
-                border-radius: 0 !important;
-            }
-            .part-text{
-                display: none;
-            }
-            form{
-                width: 130vw;
-                padding-left: 30%;
-            }
-            .continueText{
-                margin-right:410px !important;
-            }
-            .sociallinks{
-                margin-right:400px !important;
-            }
-            button.socialBtn{
-                max-width: 200px !important;
-               
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 425px){
-    .login form{
-        .inputGroup{
-            padding-left: 0.5em;
-            margin-right: 1vw;
-            position: relative;
-            span.iconeye{
-                cursor: pointer;
-                   position:absolute;
-                   top:12%;
-                   right: 5%;
-               }
-        }
-        .loginContinue{
-            margin-right:0px !important;
-        }
-        .loginSocial{
-            margin-right:0px !important;
-            width: 110vw;
-        }
-        button.socialBtn{
-            max-width: 170px !important;
-           
-        }
-        .single{
-            margin-right: 2vw !important;
-        }
-    }
-
-    #signIn{
-        #signUp{
-            form{
-                width: 100vw;
-                padding-left: 6% !important;
-                .inputGroup{
-                    input{
-                        width: 90vw !important;
-                    }
-                    span.iconeye{
-                        cursor: pointer;
-                           position:absolute;
-                           top:20%;
-                           right: 10%;
-                       }
-                }
-                .name{
-                    width: 90vw;
-                    input{
-                        height: 50px;
-                        width: 100%;
-                     
-                    }
-                    input:first-of-type{
-                        margin-bottom: 25px;
-                    }
-                    input:nth-of-type(2){
-                        margin-left: -1px !important;
-                    }
-                }
-                button#signupBtn{
-                    width: 90vw !important;
-                }
-                .continueText{
-                    width: 90vw;
-                    margin-left: 10px;
-                }
-                .sociallinks{
-                    width: 100vw;
-                }
-               
-            }
-        }
-    }
-}   
