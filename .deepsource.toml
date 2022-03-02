@@ -5,11 +5,27 @@ name = "shell"
 enabled = true
 
 [[analyzers]]
+name = "terraform"
+enabled = true
+
+[[analyzers]]
+name = "secrets"
+enabled = true
+
+[[analyzers]]
+name = "scala"
+enabled = true
+
+[[analyzers]]
 name = "rust"
 enabled = true
 
   [analyzers.meta]
   msrv = "1.30.0"
+
+[[analyzers]]
+name = "ansible"
+enabled = true
 
 [[analyzers]]
 name = "go"
@@ -19,11 +35,18 @@ enabled = true
   import_root = "github.com/abrotechit/Cyberhunt2010"
 
 [[analyzers]]
-name = "ansible"
+name = "csharp"
 enabled = true
 
 [[analyzers]]
-name = "csharp"
+name = "python"
+enabled = true
+
+  [analyzers.meta]
+  runtime_version = "3.x.x"
+
+[[analyzers]]
+name = "ruby"
 enabled = true
 
 [[analyzers]]
@@ -34,23 +57,7 @@ enabled = true
   runtime_version = "11"
 
 [[analyzers]]
-name = "scala"
-enabled = true
-
-[[analyzers]]
-name = "secrets"
-enabled = true
-
-[[analyzers]]
-name = "ruby"
-enabled = true
-
-[[analyzers]]
 name = "docker"
-enabled = true
-
-[[analyzers]]
-name = "test-coverage"
 enabled = true
 
 [[analyzers]]
@@ -63,22 +70,4 @@ enabled = true
 
 [[analyzers]]
 name = "javascript"
-enabled = true
-
-  [analyzers.meta]
-  plugins = [
-    "react",
-    "angular",
-    "vue",
-    "ember",
-    "angularjs",
-    "meteor"
-  ]
-
-[[transformers]]
-name = "prettier"
-enabled = true
-
-[[transformers]]
-name = "standardjs"
 enabled = true
