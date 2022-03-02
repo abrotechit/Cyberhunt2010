@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -10,8 +10,8 @@ const {
 } = process.env;
 
 export const envConfig = {
-  isLive: IS_LIVE === 'live' ? true : false,
-  corporateAppUrl: REACT_APP_CORPORATE_APP || 'https://business.wayabank.ng',
-  personalAppUrl: REACT_APP_PERSONAL_APP || 'https://ibank.wayabank.ng',
-  baseUrl: REACT_APP_BASE_URL || 'https://services.wayabank.ng',
+  isLive: IS_LIVE === "live",
+  corporateAppUrl: REACT_APP_CORPORATE_APP || "https://business.wayabank.ng",
+  personalAppUrl: REACT_APP_PERSONAL_APP || "https://ibank.wayabank.ng",
+  baseUrl: REACT_APP_BASE_URL || "https://services.wayabank.ng",
 };

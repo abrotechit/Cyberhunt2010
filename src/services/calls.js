@@ -1,4 +1,4 @@
-import { customBaseUrl, httpGet } from './http';
+import { customBaseUrl, httpGet } from "./http";
 
 export const getBusinessTypes = async () => {
   const res = await httpGet(

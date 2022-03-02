@@ -1,6 +1,6 @@
-import React from 'react';
-import { Spinner } from 'reactstrap';
-import PropTypes from 'prop-types';
+import React from "react";
+import { Spinner } from "reactstrap";
+import PropTypes from "prop-types";
 
 const ButtonComponent = ({
   role,
@@ -27,10 +27,10 @@ const ButtonComponent = ({
       <Spinner
         as="span"
         animation="border"
-        size={size || 'md'}
+        size={size || "md"}
         role="status"
         aria-hidden="true"
-        variant={variant || 'light'}
+        variant={variant || "light"}
       />
     ) : (
       content || children
@@ -40,12 +40,12 @@ const ButtonComponent = ({
 
 ButtonComponent.defaultProps = {
   disabled: false,
-  className: 'btn btn-primary',
-  content: 'Enter',
-  role: 'input',
-  variant: 'light',
-  size: 'md',
-  children: '',
+  className: "btn btn-primary",
+  content: "Enter",
+  role: "input",
+  variant: "light",
+  size: "md",
+  children: "",
 };
 
 ButtonComponent.propTypes = {

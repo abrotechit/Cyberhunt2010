@@ -1,18 +1,18 @@
-import React from 'react';
+import React from "react";
 import {
   FacebookShareButton,
   WhatsappShareButton,
   TwitterShareButton,
   EmailShareButton,
   LinkedinShareButton,
-} from 'react-share';
+} from "react-share";
 import {
   WhatsAppIcon,
   FacebookIcon,
   EmailIcon,
   TwitterIcon,
   SortSidebarIcons,
-} from './Icons';
+} from "./Icons";
 
 export const objectToGetParams = (object) => {
   const params = Object.entries(object)
@@ -25,7 +25,7 @@ export const objectToGetParams = (object) => {
       const value = _a[1];
       return `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`;
     });
-  return params.length > 0 ? `?${params.join('&')}` : '';
+  return params.length > 0 ? `?${params.join("&")}` : "";
 };
 
 function isMobileOrTablet() {
@@ -33,12 +33,12 @@ function isMobileOrTablet() {
 }
 
 export function ShareToFacebook({ url, text }) {
-  console.log('share', text, url);
+  console.log("share", text, url);
   return (
     <FacebookShareButton url={url} quote={text} hashtag="#wayapaychat">
-      <FacebookIcon />{' '}
+      <FacebookIcon />{" "}
       <span>
-        via Facebook <SortSidebarIcons name="arrowRight" />{' '}
+        via Facebook <SortSidebarIcons name="arrowRight" />{" "}
       </span>
     </FacebookShareButton>
   );
@@ -60,7 +60,7 @@ export function ShareToWhatsapp({ url, text }) {
       {/* <WhatsappIcon size={36} /> */}
       <WhatsAppIcon h="36" w="36" />
       <span>
-        via Whatsapp <SortSidebarIcons name="arrowRight" />{' '}
+        via Whatsapp <SortSidebarIcons name="arrowRight" />{" "}
       </span>
     </WhatsappShareButton>
   );
@@ -68,10 +68,10 @@ export function ShareToWhatsapp({ url, text }) {
 
 export const whatsappLink = (url, text) => {
   const title = text;
-  const separator = ' ';
+  const separator = " ";
   // assert_1.default(url, 'whatsapp.url');
   return `https://${
-    isMobileOrTablet() ? 'api' : 'web'
+    isMobileOrTablet() ? "api" : "web"
   }.whatsapp.com/send${objectToGetParams({
     text: title ? title + separator + url : url,
   })}`;
@@ -87,9 +87,9 @@ export function ShareToEmail({ url, text }) {
       //  className={classes.socialMediaButton}
     >
       {/* <WhatsappIcon size={36} /> */}
-      <EmailIcon />{' '}
+      <EmailIcon />{" "}
       <span>
-        via Email <SortSidebarIcons name="arrowRight" />{' '}
+        via Email <SortSidebarIcons name="arrowRight" />{" "}
       </span>
     </EmailShareButton>
   );
@@ -104,9 +104,9 @@ export function ShareToTwitter({ url, text, username }) {
       hashtag="#wayapaychat"
       media="http://res.cloudinary.com/lms-center/image/upload/v1599506126/alfons-morales-YLSwjSy7stw-unsplash_wcjqij.jpg"
     >
-      <TwitterIcon />{' '}
+      <TwitterIcon />{" "}
       <span>
-        via Twitter <SortSidebarIcons name="arrowRight" />{' '}
+        via Twitter <SortSidebarIcons name="arrowRight" />{" "}
       </span>
     </TwitterShareButton>
   );

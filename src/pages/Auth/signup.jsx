@@ -1,41 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import swal from 'sweetalert';
-import validator from 'validator';
-import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom';
-import $ from 'jquery';
-import 'react-phone-number-input/style.css';
-import PhoneInput, { parsePhoneNumber } from 'react-phone-number-input';
-import './index.scss';
-import ToggleInput from '../../componentParts/ToggleInput';
-import { customBaseUrl, httpPost, httpGet } from '../../services/http';
-import Button from '../../componentParts/Button';
-import TermsAndCondition from '../../componentParts/Modals/Terms/TermsAndCondition';
-import PrivacyPolicy from '../../componentParts/Modals/Terms/PrivacyPolicy';
-import Bg from '../../assets/images/BG.png';
-import MerchantForm from '../../componentParts/Modals/MerchantForm';
-import MerchantForm2 from '../../componentParts/Modals/MerchantForm2';
-import MerchantForm3 from '../../componentParts/Modals/MerchantForm3';
-import VerifyOtp from '../../componentParts/Modals/Otp/VerifyOtp';
-import ResendOtp from '../../componentParts/Modals/Otp/ResendOtpOutside';
-import { getBusinessTypes } from '../../services/calls';
-import Logo from '../../assets/images/wayaBankLogo1.png';
+import React, { useEffect, useState } from "react";
+import swal from "sweetalert";
+import validator from "validator";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
+import $ from "jquery";
+import "react-phone-number-input/style.css";
+import PhoneInput, { parsePhoneNumber } from "react-phone-number-input";
+import "./index.scss";
+import ToggleInput from "../../componentParts/ToggleInput";
+import { customBaseUrl, httpPost, httpGet } from "../../services/http";
+import Button from "../../componentParts/Button";
+import TermsAndCondition from "../../componentParts/Modals/Terms/TermsAndCondition";
+import PrivacyPolicy from "../../componentParts/Modals/Terms/PrivacyPolicy";
+import Bg from "../../assets/images/BG.png";
+import MerchantForm from "../../componentParts/Modals/MerchantForm";
+import MerchantForm2 from "../../componentParts/Modals/MerchantForm2";
+import MerchantForm3 from "../../componentParts/Modals/MerchantForm3";
+import VerifyOtp from "../../componentParts/Modals/Otp/VerifyOtp";
+import ResendOtp from "../../componentParts/Modals/Otp/ResendOtpOutside";
+import { getBusinessTypes } from "../../services/calls";
+import Logo from "../../assets/images/wayaBankLogo1.png";
 
 const SignupPage = () => {
   const history = useHistory();
   const [businessTypes, setBusinessTypes] = useState([]);
-  const [mode, setMode] = useState('individual');
-  const [otp, setOtp] = useState('');
-  const [phone, setPhone] = useState('');
+  const [mode, setMode] = useState("individual");
+  const [otp, setOtp] = useState("");
+  const [phone, setPhone] = useState("");
   const [showResendOtp, setShowResendOtp] = useState(false);
   const [data, setData] = useState({
-    firstName: '',
-    surname: '',
-    email: '',
-    password: '',
-    phoneNumber: '',
-    confirmPassword: '',
-    referenceCode: '',
+    firstName: "",
+    surname: "",
+    email: "",
+    password: "",
+    phoneNumber: "",
+    confirmPassword: "",
+    referenceCode: "",
   });
   const [showVerifyOtp, setShowVerifyOtp] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -53,52 +53,52 @@ const SignupPage = () => {
   const handleSubmit = async () => {
     setLoading(true);
 
-    const term = $('#term1').is(':checked');
+    const term = $("#term1").is(":checked");
     if (!term) {
-      swal('Oops!', 'Please Agree to Terms & conditions', 'error');
+      swal("Oops!", "Please Agree to Terms & conditions", "error");
       setLoading(false);
       return;
     }
 
     if (validator.isEmpty(data.firstName)) {
-      swal('Oops!', 'First name cannot be empty', 'error');
+      swal("Oops!", "First name cannot be empty", "error");
       setLoading(false);
       return;
     }
     if (validator.isEmpty(data.surname)) {
-      swal('Oops!', 'Surname cannot be empty', 'error');
+      swal("Oops!", "Surname cannot be empty", "error");
       setLoading(false);
       return;
     }
     if (validator.isEmpty(data.email)) {
-      swal('Oops!', 'Email cannot be empty', 'error');
+      swal("Oops!", "Email cannot be empty", "error");
       setLoading(false);
       return;
     }
     if (!validator.isEmail(data.email)) {
-      swal('Oops!', 'Invalid Email format', 'error');
+      swal("Oops!", "Invalid Email format", "error");
       setLoading(false);
       return;
     }
     if (validator.isEmpty(data.password)) {
-      swal('Oops!', 'Password cannot be empty', 'error');
+      swal("Oops!", "Password cannot be empty", "error");
       setLoading(false);
       return;
     }
 
-    const PASSWORD_REGEX = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$'; // _ added
+    const PASSWORD_REGEX = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"; // _ added
     if (!data.password.match(PASSWORD_REGEX)) {
       swal(
-        'Oops!',
-        'Your password must be at least 8 characters long, contain at least one number and have a mixture of uppercase and lowercase letters',
-        'error'
+        "Oops!",
+        "Your password must be at least 8 characters long, contain at least one number and have a mixture of uppercase and lowercase letters",
+        "error"
       );
       setLoading(false);
       return;
     }
 
     if (validator.isEmpty(data.phoneNumber)) {
-      swal('Oops!', 'Phone number cannot be empty', 'error');
+      swal("Oops!", "Phone number cannot be empty", "error");
       setLoading(false);
       return;
     }
@@ -109,22 +109,22 @@ const SignupPage = () => {
 
     if (/\D/.test(formattedPhone)) {
       swal(
-        'Oops!',
-        'Phone number accepts only numeric characters (Allowed input:0-9)',
-        'error'
+        "Oops!",
+        "Phone number accepts only numeric characters (Allowed input:0-9)",
+        "error"
       );
       setLoading(false);
       return;
     }
 
     if (formattedPhone.length > 13) {
-      swal('Oops!', 'Phone number cannot be be less than 13 numbers', 'error');
+      swal("Oops!", "Phone number cannot be be less than 13 numbers", "error");
       setLoading(false);
       return;
     }
 
     if (!validator.equals(data.password, data.confirmPassword)) {
-      swal('Oops!', 'Password do not match', 'error');
+      swal("Oops!", "Password do not match", "error");
       setLoading(false);
       return;
     }
@@ -141,7 +141,7 @@ const SignupPage = () => {
     const hiddenPhone = `*********${data.phoneNumber.substr(-4, 4)}`;
 
     const res = await httpPost(
-      '/api/v1/auth/create',
+      "/api/v1/auth/create",
       postData,
       customBaseUrl.authUrl
     );
@@ -150,13 +150,13 @@ const SignupPage = () => {
       setPhone(formattedPhone);
       setLoading(false);
       swal(
-        'Done',
+        "Done",
         `Account created! and a verification OTP has been sent to ${hiddenPhone}`,
-        'success',
+        "success",
         {
           button: {
-            text: 'Continue to OTP',
-            className: 'button-success',
+            text: "Continue to OTP",
+            className: "button-success",
             value: true,
           },
           closeOnClickOutside: false,
@@ -167,7 +167,7 @@ const SignupPage = () => {
       });
     } else {
       setLoading(false);
-      swal('Oops!', res.message || 'Something went wrong', 'error');
+      swal("Oops!", res.message || "Something went wrong", "error");
     }
   };
 
@@ -179,19 +179,19 @@ const SignupPage = () => {
     );
     if (res.status) {
       setLoading(false);
-      swal('Done', res.message, 'success').then(() => {
+      swal("Done", res.message, "success").then(() => {
         setShowResendOtp(false);
         setShowVerifyOtp(true);
       });
     } else {
       setLoading(false);
-      swal('Wrong', `${res.message}`, 'error', {
+      swal("Wrong", `${res.message}`, "error", {
         button: {
-          text: 'Resend OTP',
-          className: 'button-warning',
+          text: "Resend OTP",
+          className: "button-warning",
         },
       }).then(() => {
-        setPhone('');
+        setPhone("");
       });
     }
   };
@@ -203,28 +203,28 @@ const SignupPage = () => {
       phoneOrEmail: phone,
     };
     const res = await httpPost(
-      '/api/v1/auth/verify-otp',
+      "/api/v1/auth/verify-otp",
       postData,
       customBaseUrl.authUrl
     );
     if (res.status) {
       setLoading(false);
-      setOtp('');
-      setPhone('');
+      setOtp("");
+      setPhone("");
       setShowVerifyOtp(false);
-      swal('Done', res.message, 'success').then(() => {
-        history.push('/login');
+      swal("Done", res.message, "success").then(() => {
+        history.push("/login");
       });
     } else {
       setLoading(false);
-      swal('Oops!', res.message, 'error');
+      swal("Oops!", res.message, "error");
     }
   };
   const handleSignup = async () => {
     setLoading(true);
 
     if (!validator.equals(data.password, data.confirmPassword)) {
-      swal('Oops!', 'Password do not match', 'error');
+      swal("Oops!", "Password do not match", "error");
       setLoading(false);
       return;
     }
@@ -249,7 +249,7 @@ const SignupPage = () => {
     const hiddenPhone = `*********${data.phoneNumber.substr(-4, 4)}`;
 
     const res = await httpPost(
-      '/api/v1/auth/create-corporate',
+      "/api/v1/auth/create-corporate",
       postData,
       customBaseUrl.authUrl
     );
@@ -258,13 +258,13 @@ const SignupPage = () => {
       setPhone(data.phoneNumber);
       setLoading(false);
       swal(
-        'Done',
+        "Done",
         `Account created! and a verification OTP has been sent to ${hiddenPhone}`,
-        'success',
+        "success",
         {
           button: {
-            text: 'Continue to OTP',
-            className: 'button-success',
+            text: "Continue to OTP",
+            className: "button-success",
             value: true,
           },
           closeOnClickOutside: false,
@@ -275,7 +275,7 @@ const SignupPage = () => {
       });
     } else {
       setLoading(false);
-      swal('Oops!', res.message || 'Something went wrong', 'error');
+      swal("Oops!", res.message || "Something went wrong", "error");
     }
   };
 
@@ -288,88 +288,88 @@ const SignupPage = () => {
 
   useEffect(() => {
     const { location } = history;
-    if (new URLSearchParams(location.search).get('tab') === 'corporate') {
-      setMode('corporate');
+    if (new URLSearchParams(location.search).get("tab") === "corporate") {
+      setMode("corporate");
     }
   }, []);
 
   return (
     <div
-      id='login-bg'
+      id="login-bg"
       style={{
         backgroundImage: `url(${Bg})`,
       }}
     >
-      <div id='login-modal' className='modal-body-rs-log col-12'>
-        <div className='waya-modal-body-log'>
-          <div className='header-sec-modal-log'>
-            <img className='header-sec-logo-log mx-auto' src={Logo} alt='' />
+      <div id="login-modal" className="modal-body-rs-log col-12">
+        <div className="waya-modal-body-log">
+          <div className="header-sec-modal-log">
+            <img className="header-sec-logo-log mx-auto" src={Logo} alt="" />
           </div>
           <div
-            className='w-auto text-center mx-auto'
-            style={{ border: '1px solid #b6b3b3' }}
+            className="w-auto text-center mx-auto"
+            style={{ border: "1px solid #b6b3b3" }}
           >
-            <div className='row m-0'>
+            <div className="row m-0">
               <div
-                role='button'
+                role="button"
                 tabIndex={0}
-                aria-hidden='true'
-                className={mode === 'individual' ? 'col reg-active' : 'col'}
-                onClick={() => setMode('individual')}
+                aria-hidden="true"
+                className={mode === "individual" ? "col reg-active" : "col"}
+                onClick={() => setMode("individual")}
               >
                 Personal
               </div>
               <div
-                role='button'
+                role="button"
                 tabIndex={0}
-                aria-hidden='true'
-                className={mode === 'corporate' ? 'col reg-active' : 'col'}
+                aria-hidden="true"
+                className={mode === "corporate" ? "col reg-active" : "col"}
                 onClick={() => {
-                  setMode('corporate');
+                  setMode("corporate");
                 }}
               >
                 Business
               </div>
             </div>
           </div>
-          {mode === 'individual' && (
+          {mode === "individual" && (
             <>
-              <h1 className='modal-header-data-log'>
+              <h1 className="modal-header-data-log">
                 Create your personal WayaBank account
               </h1>
 
               <form>
-                <div className='inputbox-with-one-input-log'>
+                <div className="inputbox-with-one-input-log">
                   <input
-                    placeholder='First name'
-                    type='text'
+                    placeholder="First name"
+                    type="text"
                     onChange={(e) => {
                       setData({ ...data, firstName: e.target.value });
                     }}
                   />
                 </div>
 
-                <div className='inputbox-with-one-input-log'>
+                <div className="inputbox-with-one-input-log">
                   <input
-                    placeholder='Surname'
-                    type='text'
+                    placeholder="Surname"
+                    type="text"
                     onChange={(e) => {
                       setData({ ...data, surname: e.target.value });
                     }}
                   />
                 </div>
 
-                <div className='inputbox-with-one-input-log'>
+                <div className="inputbox-with-one-input-log">
                   <input
-                    placeholder='Email Address'
-                    type='text'
+                    placeholder="Email Address"
+                    type="text"
                     onChange={(e) =>
                       setData({ ...data, email: e.target.value })
                     }
                   />
                 </div>
 
-                <div className='inputbox-with-one-input-log'>
+                <div className="inputbox-with-one-input-log">
                   {/* <input
                   placeholder="Phone Number"
                   type="text"
@@ -379,59 +379,59 @@ const SignupPage = () => {
                   }}
                 /> */}
                   <PhoneInput
-                    placeholder='Phone Number'
-                    defaultCountry='NG'
+                    placeholder="Phone Number"
+                    defaultCountry="NG"
                     international
                     value={data.phoneNumber}
                     onChange={(e) => setData({ ...data, phoneNumber: e })}
                   />
                 </div>
 
-                <div className='inputbox-with-one-input-log'>
+                <div className="inputbox-with-one-input-log">
                   <input
-                    placeholder='Referral Code'
-                    type='text'
+                    placeholder="Referral Code"
+                    type="text"
                     onChange={(e) => {
                       setData({ ...data, referenceCode: e.target.value });
                     }}
                   />
                 </div>
 
-                <div className='inputbox-with-one-input-log toggle-pass-wrapper'>
+                <div className="inputbox-with-one-input-log toggle-pass-wrapper">
                   <ToggleInput
-                    placeholder='Password'
-                    type='password'
+                    placeholder="Password"
+                    type="password"
                     onChange={(e) => {
                       setData({ ...data, password: e.target.value });
                     }}
                   />
                 </div>
 
-                <div className='inputbox-with-one-input-log toggle-pass-wrapper'>
+                <div className="inputbox-with-one-input-log toggle-pass-wrapper">
                   <ToggleInput
-                    placeholder='Confirm Password'
-                    type='password'
+                    placeholder="Confirm Password"
+                    type="password"
                     onChange={(e) => {
                       setData({ ...data, confirmPassword: e.target.value });
                     }}
                   />
                 </div>
 
-                <div className='form-group'>
-                  <input type='checkbox' id='term1' />{' '}
-                  <span className='add-cursor'>
-                    By signing up, you agree with the{' '}
+                <div className="form-group">
+                  <input type="checkbox" id="term1" />{" "}
+                  <span className="add-cursor">
+                    By signing up, you agree with the{" "}
                     <span
-                      className='primary-link'
+                      className="primary-link"
                       onClick={() => {
                         setShowTerms(true);
                       }}
                     >
                       terms and conditions
-                    </span>{' '}
-                    and{' '}
+                    </span>{" "}
+                    and{" "}
                     <span
-                      className='primary-link'
+                      className="primary-link"
                       onClick={() => {
                         setShowPrivacy(true);
                       }}
@@ -441,20 +441,20 @@ const SignupPage = () => {
                   </span>
                 </div>
               </form>
-              <div className='submit-modal-btn-wrap-log'>
+              <div className="submit-modal-btn-wrap-log">
                 <Button
-                  type='button'
+                  type="button"
                   loading={loading}
                   disabled={loading && false}
                   onClick={handleSubmit}
-                  content='Create account'
+                  content="Create account"
                 />
               </div>
             </>
           )}
-          {mode === 'corporate' && (
+          {mode === "corporate" && (
             <>
-              <h1 className='modal-header-data'>
+              <h1 className="modal-header-data">
                 Create your Business WayaBank account
               </h1>
               {page === 1 ? (
@@ -482,11 +482,11 @@ const SignupPage = () => {
             </>
           )}
 
-          <div className='text-center'>
-            <span className=''>
-              Have an account?{' '}
-              <Link className='text-link' to='login'>
-                Sign In{' '}
+          <div className="text-center">
+            <span className="">
+              Have an account?{" "}
+              <Link className="text-link" to="login">
+                Sign In{" "}
               </Link>
             </span>
           </div>
@@ -495,12 +495,12 @@ const SignupPage = () => {
       {showTerms ? (
         <TermsAndCondition showModal={showTerms} hideModal={setShowTerms} />
       ) : (
-        ''
+        ""
       )}
       {showPrivacy ? (
         <PrivacyPolicy showModal={showPrivacy} hideModal={setShowPrivacy} />
       ) : (
-        ''
+        ""
       )}
       {showVerifyOtp ? (
         <VerifyOtp
@@ -509,31 +509,31 @@ const SignupPage = () => {
           hideModal={setShowVerifyOtp}
           otp={otp}
           setOtp={setOtp}
-          separator=''
-          title='Verify Your Account'
-          description='Please input the OTP sent to your email address or phone number'
+          separator=""
+          title="Verify Your Account"
+          description="Please input the OTP sent to your email address or phone number"
           isResendOtp
-          buttonLabel='Verify'
+          buttonLabel="Verify"
           handleSubmit={completeSignup}
           loading={loading}
           numInputs={6}
           resendOtp={setShowResendOtp}
         />
       ) : (
-        ''
+        ""
       )}
       {showResendOtp ? (
         <ResendOtp
-          center='true'
+          center="true"
           showModal={showResendOtp}
           hideModal={setShowResendOtp}
-          title='Resend OTP'
-          description='Please input the email and mobile number'
+          title="Resend OTP"
+          description="Please input the email and mobile number"
           handleSubmit={resendOtp}
           loading={loading}
         />
       ) : (
-        ''
+        ""
       )}
     </div>
   );

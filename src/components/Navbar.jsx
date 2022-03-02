@@ -29,7 +29,7 @@ function Navbar() {
         <span
           className="menu-btn relative w-6 h-1 bg-white block"
           onClick={showDropdown}
-        ></span>
+        />
 
         <div className="dropdown absolute w-full left-0 top-24 z-20 bg-primary-theme flex hidden sm:hidden flex-col h-auto rounded shadow">
           <Link

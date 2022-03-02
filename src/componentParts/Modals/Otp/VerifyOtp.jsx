@@ -1,8 +1,8 @@
-import React from 'react';
-import OtpInput from 'react-otp-input';
-import PropTypes from 'prop-types';
-import { Modal } from 'reactstrap';
-import Button from '../../Button';
+import React from "react";
+import OtpInput from "react-otp-input";
+import PropTypes from "prop-types";
+import { Modal } from "reactstrap";
+import Button from "../../Button";
 // import ResetPin from '../ResetPin';
 
 export default function VerifyOtp(props) {
@@ -61,9 +61,9 @@ export default function VerifyOtp(props) {
               onChange={(e) => setOtp(e)}
               numInputs={numInputs}
               separator={separator}
-              containerStyle={{ justifyContent: 'center' }}
+              containerStyle={{ justifyContent: "center" }}
               inputStyle={
-                numInputs > 5 ? 'otp-input2 otp-bottom' : 'otp-input otp-bottom'
+                numInputs > 5 ? "otp-input2 otp-bottom" : "otp-input otp-bottom"
               }
               isInputSecure
             />
@@ -78,10 +78,10 @@ export default function VerifyOtp(props) {
                 content={buttonLabel}
               />
             </div>
-            <div className={!isResendOtp ? 'd-none' : 'mt-3 text-center'}>
+            <div className={!isResendOtp ? "d-none" : "mt-3 text-center"}>
               <a
                 className={
-                  !isResendOtp ? 'd-none' : 'text-dark decoration-none'
+                  !isResendOtp ? "d-none" : "text-dark decoration-none"
                 }
                 onClick={(e) => {
                   e.preventDefault();
@@ -115,9 +115,9 @@ export default function VerifyOtp(props) {
 
 VerifyOtp.defaultProps = {
   separator: <span>-</span>,
-  title: '',
-  description: '',
-  buttonLabel: 'Login',
+  title: "",
+  description: "",
+  buttonLabel: "Login",
   numInputs: 4,
   isResendOtp: false,
 };

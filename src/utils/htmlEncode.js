@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _ from "lodash";
 
 const createMarkup = (encodedHtml) => ({
   __html: _.unescape(encodedHtml),

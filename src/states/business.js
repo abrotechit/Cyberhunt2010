@@ -11,7 +11,7 @@ export const getMerchants = selector({
       console.error(`ERROR: \n${error}`);
       return {};
     }
-  }
+  },
 });
 
 export const getAgents = selector({
@@ -24,7 +24,7 @@ export const getAgents = selector({
       console.error(`ERROR: \n${error}`);
       return {};
     }
-  }
+  },
 });
 
 export const getHowToJoin = selector({
@@ -37,7 +37,7 @@ export const getHowToJoin = selector({
       console.error(`ERROR: \n${error}`);
       return {};
     }
-  }
+  },
 });
 
 export const getBusinessType = selector({
@@ -50,7 +50,7 @@ export const getBusinessType = selector({
       console.error(`ERROR: \n${error}`);
       return [];
     }
-  }
+  },
 });
 
 // http://68.183.60.114:8059/api/v1/

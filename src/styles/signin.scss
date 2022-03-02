@@ -21,14 +21,14 @@
     width: 360px !important;
   }
   .single {
-    font-family: 'Sarabun', sans-serif;
+    font-family: "Sarabun", sans-serif;
     padding-top: 5% !important;
   }
   .inputGroup {
     padding-left: 4em;
     position: relative;
     label {
-      font-family: 'Sarabun', sans-serif;
+      font-family: "Sarabun", sans-serif;
       font-size: 14px;
       color: #333333;
     }
@@ -84,7 +84,7 @@ input:focus {
 
 #signUp {
   h3 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 800;
     font-size: 40px;
     color: #fff;
@@ -92,7 +92,7 @@ input:focus {
   h3 + p {
     font-size: 15px;
     color: #fff;
-    font-family: 'Sarabun', sans-serif;
+    font-family: "Sarabun", sans-serif;
   }
   form {
     background-color: white;
@@ -102,11 +102,11 @@ input:focus {
     padding-left: 4em;
     padding-bottom: 1.5em;
     border-radius: 10px;
-    input[type='checkbox'] {
+    input[type="checkbox"] {
       cursor: pointer;
     }
     label {
-      font-family: 'Sarabun', sans-serif;
+      font-family: "Sarabun", sans-serif;
       font-size: 13px;
       color: #3f3f3f;
       span {

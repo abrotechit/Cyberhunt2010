@@ -1,8 +1,8 @@
-import $ from 'jquery';
+import $ from "jquery";
 
 export const Browser = {};
-const vendor = ((navigator && navigator.vendor) || '').toLowerCase();
-const userAgent = ((navigator && navigator.userAgent) || '').toLowerCase();
+const vendor = ((navigator && navigator.vendor) || "").toLowerCase();
+const userAgent = ((navigator && navigator.userAgent) || "").toLowerCase();
 
 // Start Detecting browser helpers functions
 function isOpera() {
@@ -33,16 +33,16 @@ function isInternetExplorer() {
 }
 
 Browser.getBrowserName = () => {
-  if (isOpera()) return 'opera';
+  if (isOpera()) return "opera";
   // Opera
-  if (isChrome()) return 'chrome';
+  if (isChrome()) return "chrome";
   // Chrome
-  if (isFirefox()) return 'firefox';
+  if (isFirefox()) return "firefox";
   // Firefox
-  if (isSafari()) return 'safari';
+  if (isSafari()) return "safari";
   // Safari
-  if (isInternetExplorer()) return 'ie'; // Internet Explorer
-  return '';
+  if (isInternetExplorer()) return "ie"; // Internet Explorer
+  return "";
 };
 // End Detecting browser helpers functions
 
@@ -50,9 +50,9 @@ Browser.getBrowserName = () => {
 
 export const getUserInfo = () => {
   return $.ajax({
-    url: 'https://geolocation-db.com/jsonp',
-    jsonpCallback: 'callback',
-    dataType: 'jsonp',
+    url: "https://geolocation-db.com/jsonp",
+    jsonpCallback: "callback",
+    dataType: "jsonp",
     success: (location) => {
       return {
         countryName: location.country_name,

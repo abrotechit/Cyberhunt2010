@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Modal, ModalBody, ModalHeader } from 'reactstrap';
-import Skeleton from 'react-loading-skeleton';
-import { customBaseUrl, httpGet } from '../../../services/http';
-import createMarkup from '../../../utils/htmlEncode';
-import StepButton from '../../StepButton';
+import React, { useEffect, useState } from "react";
+import { Modal, ModalBody, ModalHeader } from "reactstrap";
+import Skeleton from "react-loading-skeleton";
+import { customBaseUrl, httpGet } from "../../../services/http";
+import createMarkup from "../../../utils/htmlEncode";
+import StepButton from "../../StepButton";
 
 export default function PrivacyPolicy(props) {
   const { showModal, hideModal } = props;
@@ -30,39 +30,39 @@ export default function PrivacyPolicy(props) {
       isOpen={showModal}
       toggle={() => hideModal(false)}
       centered
-      id='Terms-modal'
+      id="Terms-modal"
     >
-      <ModalHeader className='' toggle={() => hideModal(false)}>
-        <div className='custome-header'>
+      <ModalHeader className="" toggle={() => hideModal(false)}>
+        <div className="custome-header">
           <div>Privacy Policy</div>
         </div>
       </ModalHeader>
-      <ModalBody className='modal-body-rs col-sm-12 col-md-10 pt-4'>
+      <ModalBody className="modal-body-rs col-sm-12 col-md-10 pt-4">
         {!loading ? (
-          <div className=''>
+          <div className="">
             <Skeleton height={500} width={400} />
           </div>
         ) : (
           <div
             style={{
-              width: '100%',
-              maxHeight: '620px',
-              overflowY: 'auto',
-              padding: '2px 0px 32px',
-              position: 'relative',
+              width: "100%",
+              maxHeight: "620px",
+              overflowY: "auto",
+              padding: "2px 0px 32px",
+              position: "relative",
             }}
           >
             {/* eslint-disable react/no-danger */}
             <div
-              className='html-div p-0'
+              className="html-div p-0"
               dangerouslySetInnerHTML={createMarkup(terms)}
             />
           </div>
         )}
         {terms ? (
-          <StepButton title='Confirm' onClick={() => hideModal(false)} />
+          <StepButton title="Confirm" onClick={() => hideModal(false)} />
         ) : (
-          ''
+          ""
         )}
       </ModalBody>
     </Modal>

@@ -3,27 +3,27 @@ import { getSiteApi } from "../services/apiCalls";
 
 export const homeRefresh = atom({
   key: "homeRefresh",
-  default: ""
-})
+  default: "",
+});
 
 export const fetching = atom({
   key: "fetching",
-  default: true
-})
+  default: true,
+});
 
 export const getHome = selector({
   key: "getHome",
   get: async ({ get }) => {
     try {
       const res = get(homeRefresh);
-      console.log(res)
+      console.log(res);
       const result = await getSiteApi("home_page");
       return result.data || {};
     } catch (error) {
       console.error(`ERROR: \n${error}`);
       return {};
     }
-  }
+  },
 });
 
 export const getSettings = selector({
@@ -36,7 +36,7 @@ export const getSettings = selector({
       console.error(`ERROR: \n${error}`);
       return {};
     }
-  }
+  },
 });
 
 export const getAboutContent = selector({
@@ -49,7 +49,7 @@ export const getAboutContent = selector({
       console.error(`ERROR: \n${error}`);
       return {};
     }
-  }
+  },
 });
 
 export const getFeatures = selector({
@@ -57,14 +57,14 @@ export const getFeatures = selector({
   get: async ({ get }) => {
     try {
       const res = get(homeRefresh);
-      console.log(res)
+      console.log(res);
       const result = await getSiteApi("features");
       return result.data || [];
     } catch (error) {
       console.error(`ERROR: \n${error}`);
       return [];
     }
-  }
+  },
 });
 
 export const getHowItWorks = selector({
@@ -77,5 +77,5 @@ export const getHowItWorks = selector({
       console.error(`ERROR: \n${error}`);
       return {};
     }
-  }
+  },
 });

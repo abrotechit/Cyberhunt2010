@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 const InputComponent = ({
   role,
@@ -15,7 +15,7 @@ const InputComponent = ({
     <>
       <input
         role={role}
-        type={showPassword ? 'text' : 'password'}
+        type={showPassword ? "text" : "password"}
         disabled={disabled}
         onChange={onChange}
         className={className}
@@ -28,7 +28,7 @@ const InputComponent = ({
         aria-hidden="true"
         onClick={() => setShowPassword(!showPassword)}
         className={
-          showPassword ? 'mdi mdi-eye pass-icon' : 'mdi mdi-eye-off pass-icon'
+          showPassword ? "mdi mdi-eye pass-icon" : "mdi mdi-eye-off pass-icon"
         }
       />
     </>
@@ -37,10 +37,10 @@ const InputComponent = ({
 
 InputComponent.defaultProps = {
   disabled: false,
-  className: '',
-  placeholder: 'Enter Password',
+  className: "",
+  placeholder: "Enter Password",
   required: true,
-  role: 'input',
+  role: "input",
 };
 
 InputComponent.propTypes = {

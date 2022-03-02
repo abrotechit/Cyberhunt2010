@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import swal from 'sweetalert';
-import validator from 'validator';
-import { Modal } from 'reactstrap';
-import { parsePhoneNumber } from 'react-phone-number-input';
-import './index.scss';
-import MerchantForm from './MerchantForm';
-import MerchantForm2 from './MerchantForm2';
-import MerchantForm3 from './MerchantForm3';
-import { customBaseUrl, httpPost } from '../../../action/http';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import swal from "sweetalert";
+import validator from "validator";
+import { Modal } from "reactstrap";
+import { parsePhoneNumber } from "react-phone-number-input";
+import "./index.scss";
+import MerchantForm from "./MerchantForm";
+import MerchantForm2 from "./MerchantForm2";
+import MerchantForm3 from "./MerchantForm3";
+import { customBaseUrl, httpPost } from "../../../action/http";
 
 const MerchantSignup = (props) => {
   const {
@@ -22,32 +22,32 @@ const MerchantSignup = (props) => {
     setShowVerifyOtp,
     businessTypes,
   } = props;
-  const [mode, setMode] = useState('corporate');
+  const [mode, setMode] = useState("corporate");
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
-    orgName: '',
-    orgEmail: '',
-    orgPhone: '',
-    orgType: '',
-    businessType: '',
-    email: '',
-    city: '',
-    firstName: '',
-    officeAddress: '',
-    password: '',
-    confirmPassword: '',
-    phoneNumber: '',
-    referenceCode: '',
-    state: '',
-    surname: '',
+    orgName: "",
+    orgEmail: "",
+    orgPhone: "",
+    orgType: "",
+    businessType: "",
+    email: "",
+    city: "",
+    firstName: "",
+    officeAddress: "",
+    password: "",
+    confirmPassword: "",
+    phoneNumber: "",
+    referenceCode: "",
+    state: "",
+    surname: "",
   });
 
   const handleSignup = async () => {
     setLoading(true);
 
     if (!validator.equals(data.password, data.confirmPassword)) {
-      swal('Oops!', 'Password do not match', 'error');
+      swal("Oops!", "Password do not match", "error");
       setLoading(false);
       return;
     }
@@ -72,7 +72,7 @@ const MerchantSignup = (props) => {
     const hiddenPhone = `*********${data.phoneNumber.substr(-4, 4)}`;
 
     const res = await httpPost(
-      '/api/v1/auth/create-corporate',
+      "/api/v1/auth/create-corporate",
       postData,
       customBaseUrl.authUrl
     );
@@ -82,13 +82,13 @@ const MerchantSignup = (props) => {
       setLoading(false);
       hideModal(false);
       swal(
-        'Done',
+        "Done",
         `Account created! and a verification OTP has been sent to ${hiddenPhone}`,
-        'success',
+        "success",
         {
           button: {
-            text: 'Continue to OTP',
-            className: 'button-success',
+            text: "Continue to OTP",
+            className: "button-success",
             value: true,
           },
           closeOnClickOutside: false,
@@ -99,12 +99,12 @@ const MerchantSignup = (props) => {
       });
     } else {
       setLoading(false);
-      swal('Oops!', res.message || 'Something went wrong', 'error');
+      swal("Oops!", res.message || "Something went wrong", "error");
     }
   };
 
   return (
-    <div id='login-modal'>
+    <div id="login-modal">
       <Modal
         open={showModal}
         onClose={() => hideModal(false)}
@@ -112,44 +112,44 @@ const MerchantSignup = (props) => {
         animationDuration={400}
         center={center}
       >
-        <div className='modal-body-rs col-sm-12 col-md-10'>
-          <div className='header-sec-modal'>
+        <div className="modal-body-rs col-sm-12 col-md-10">
+          <div className="header-sec-modal">
             <input
-              type='image'
+              type="image"
               onClick={() => hideModal(false)}
-              className='header-img1'
-              src='./assets/image/back.png'
-              alt=''
+              className="header-img1"
+              src="./assets/image/back.png"
+              alt=""
               style={{ opacity: 0 }}
             />
             <img
-              className='header-sec-logo'
-              src='./assets/image/appLogo.png'
-              alt=''
+              className="header-sec-logo"
+              src="./assets/image/appLogo.png"
+              alt=""
             />
             <input
-              type='image'
+              type="image"
               onClick={() => hideModal(false)}
-              className='header-img1'
-              src='./assets/image/x.png'
-              alt=''
+              className="header-img1"
+              src="./assets/image/x.png"
+              alt=""
               style={{ opacity: 0 }}
             />
           </div>
 
-          <div className='waya-modal-body'>
+          <div className="waya-modal-body">
             <div
-              className='w-70 text-center mx-auto'
-              style={{ border: '1px solid #b6b3b3' }}
+              className="w-70 text-center mx-auto"
+              style={{ border: "1px solid #b6b3b3" }}
             >
-              <div className='row m-0'>
+              <div className="row m-0">
                 <div
-                  role='button'
+                  role="button"
                   tabIndex={0}
-                  aria-hidden='true'
-                  className={mode === 'individual' ? 'col reg-active' : 'col'}
+                  aria-hidden="true"
+                  className={mode === "individual" ? "col reg-active" : "col"}
                   onClick={() => {
-                    setMode('individual');
+                    setMode("individual");
                     setShowSignupModal(true);
                     hideModal();
                   }}
@@ -157,12 +157,12 @@ const MerchantSignup = (props) => {
                   Individual
                 </div>
                 <div
-                  role='button'
+                  role="button"
                   tabIndex={0}
-                  aria-hidden='true'
-                  className={mode === 'corporate' ? 'col reg-active' : 'col'}
+                  aria-hidden="true"
+                  className={mode === "corporate" ? "col reg-active" : "col"}
                   onClick={() => {
-                    setMode('corporate');
+                    setMode("corporate");
                     setShowMerchantSignupModal(true);
                     hideModal();
                   }}
@@ -171,7 +171,7 @@ const MerchantSignup = (props) => {
                 </div>
               </div>
             </div>
-            <h1 className='modal-header-data'>
+            <h1 className="modal-header-data">
               Create your Corporate WayaPay account
             </h1>
 
@@ -194,18 +194,18 @@ const MerchantSignup = (props) => {
               />
             )}
 
-            <div className='text-center'>
-              <span className=''>
-                Have an account?{' '}
+            <div className="text-center">
+              <span className="">
+                Have an account?{" "}
                 <a
-                  className='text-link'
-                  href='/#'
+                  className="text-link"
+                  href="/#"
                   onClick={() => {
                     setShowLoginModal(true);
                     hideModal(false);
                   }}
                 >
-                  Sign In{' '}
+                  Sign In{" "}
                 </a>
               </span>
             </div>

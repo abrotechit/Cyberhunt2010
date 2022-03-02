@@ -13,7 +13,7 @@ export const getProducts = selector({
       console.error(`ERROR: \n${error}`);
       return {};
     }
-  }
+  },
 });
 
 export const getCategories = selector({
@@ -28,5 +28,5 @@ export const getCategories = selector({
       console.error(`ERROR: \n${error}`);
       return {};
     }
-  }
+  },
 });
