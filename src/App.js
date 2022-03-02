@@ -1,17 +1,17 @@
-import SignIn from './pages/signIn';
-import WayaGram from './pages/wayagram';
-import About from './pages/about'
-import Contact from './pages/contact'
-import WayaChat from './pages/wayachat';
-import Privacy from './pages/privacy';
-import Terms from './pages/terms';
+import SignIn from "./pages/signIn";
+import WayaGram from "./pages/wayagram";
+import About from "./pages/about";
+import Contact from "./pages/contact";
+import WayaChat from "./pages/wayachat";
+import Privacy from "./pages/privacy";
+import Terms from "./pages/terms";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  Redirect,
 } from "react-router-dom";
-import './styles/App.scss';
+import "./styles/App.scss";
 
 function App() {
   return (
@@ -24,10 +24,10 @@ function App() {
           <Route exact path="/contact">
             <Contact />
           </Route>
-          <Route exact path='/wayagram'>
+          <Route exact path="/wayagram">
             <WayaGram />
           </Route>
-          <Route exact path='/signin'>
+          <Route exact path="/signin">
             <SignIn />
           </Route>
           <Route exact path="/">
@@ -39,7 +39,7 @@ function App() {
           <Route exact path="/terms-of-use">
             <Terms />
           </Route>
-          <Redirect from='*' to='/' />
+          <Redirect from="*" to="/" />
         </Switch>
       </Router>
     </div>
