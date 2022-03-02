@@ -13,7 +13,7 @@ export const getSocialLinks = selector({
       console.error(`ERROR: \n${error}`);
       return {};
     }
-  }
+  },
 });
 
 export const getAllContacts = selector({
@@ -26,5 +26,5 @@ export const getAllContacts = selector({
       console.error(`ERROR: \n${error}`);
       return {};
     }
-  }
+  },
 });

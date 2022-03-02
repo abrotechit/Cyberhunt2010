@@ -1,59 +1,60 @@
 // miscellaneous stylings
-.text-orange{
-    color: #FF4400;
+.text-orange {
+  color: #ff4400;
 }
-.text-silver{
-    color: silver;
+.text-silver {
+  color: silver;
 }
-.bg-silver{
-    background-color: silver;
+.bg-silver {
+  background-color: silver;
 }
-.bg-orange{
-    background-color: #FF4400;
+.bg-orange {
+  background-color: #ff4400;
 }
-.bg-orange-fade{
-    background-color: #FE7756;
+.bg-orange-fade {
+  background-color: #fe7756;
 }
-.bg-faintblue{
-    background-color: aliceblue;
+.bg-faintblue {
+  background-color: aliceblue;
 }
-.bg-orange-faint{
-    background-color: #f6ecea;
+.bg-orange-faint {
+  background-color: #f6ecea;
 }
-.border-start.border-5.border-orange{
-    border-color: #FE7756;
-}
-
-.btn-orange{
-    background-color: #FF4400;
-    color: #fff;
-    border-radius: 4px;
-    padding-inline-start: 10px;
-    padding-inline-end: 10px;
-    font-size: 14px;
-    transition: all 1s ease-out;
-}
-.btn-orange:hover{
-    background-color: #fff;
-    color: #FF4400;
+.border-start.border-5.border-orange {
+  border-color: #fe7756;
 }
 
-.btn-link{
-    color: #FF4400;
-    transition: all 1s ease-out;
+.btn-orange {
+  background-color: #ff4400;
+  color: #fff;
+  border-radius: 4px;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  font-size: 14px;
+  transition: all 1s ease-out;
+}
+.btn-orange:hover {
+  background-color: #fff;
+  color: #ff4400;
 }
 
-.btn-text-orange{
-    color: grey;
-}
-.btn-text-orange:focus,.btn-text-orange:hover{
-    color: #FF4400;
+.btn-link {
+  color: #ff4400;
+  transition: all 1s ease-out;
 }
 
-.list-group-item-info{
-    background-color: aliceblue;
+.btn-text-orange {
+  color: grey;
 }
- 
+.btn-text-orange:focus,
+.btn-text-orange:hover {
+  color: #ff4400;
+}
+
+.list-group-item-info {
+  background-color: aliceblue;
+}
+
 // .fs-1{
 //     font-size: 30px;
 //     font-weight: 800;
@@ -73,28 +74,25 @@
 // .fs-6{
 //     font-size: 15px;
 // }
-.fw-bold{
-    font-weight: 800;
+.fw-bold {
+  font-weight: 800;
 }
-.fw-sm{
-    font-weight: 600;
+.fw-sm {
+  font-weight: 600;
 }
-.fw-bolder{
-    font-weight: 900;
+.fw-bolder {
+  font-weight: 900;
 }
-.lh-1{
-    line-height: 18px;
-}
-
-
-.rounded-5{
-    border-radius: 15px;
-}
-.rounded-w-top{
-    border-radius: 15px 15px 0 0;
-}
-.rounded-w-bottom{
-    border-radius: 0 0 15px 15px;
+.lh-1 {
+  line-height: 18px;
 }
 
-  
+.rounded-5 {
+  border-radius: 15px;
+}
+.rounded-w-top {
+  border-radius: 15px 15px 0 0;
+}
+.rounded-w-bottom {
+  border-radius: 0 0 15px 15px;
+}

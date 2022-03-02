@@ -1,22 +1,22 @@
-#howitworkssection{
-  .videoSection{
+#howitworkssection {
+  .videoSection {
     text-align: center;
     padding-top: 10%;
     padding-bottom: 6%;
-    video{
-        width: 60vw;
-        height: 70vh;
+    video {
+      width: 60vw;
+      height: 70vh;
     }
-}
+  }
 
-.faqs {
+  .faqs {
     text-align: center;
     margin-left: 8%;
     margin-right: 8%;
-}
+  }
 
-.accordion {
-    background-color: #FF4400;
+  .accordion {
+    background-color: #ff4400;
     color: #fff;
     cursor: pointer;
     padding: 18px;
@@ -28,74 +28,76 @@
     font-size: 20px;
     transition: 0.4s;
   }
-  
-  .active, .accordion:hover {
-    background-color: #FE7756;
+
+  .active,
+  .accordion:hover {
+    background-color: #fe7756;
   }
-  
+
   .accordion:after {
-    content: '\002B';
+    content: "\002B";
     color: #fff;
     font-size: 32px;
     float: right;
     margin-left: 5px;
     margin-top: -10px;
   }
-  
+
   .active:after {
     content: "\2212";
   }
-  
+
   .panel {
     padding: 0px 6%;
     background-color: white;
     max-height: 0;
     overflow: hidden;
-    border: 1px solid #FF4400;
+    border: 1px solid #ff4400;
     transition: max-height 0.2s ease-out;
-    p, ul{
-        text-align: left;
-        font-family: 'Sarabun', sans-serif;;
-        font-size: 17px;
-        line-height: 150%;
-        color: #4F4F4F;
+    p,
+    ul {
+      text-align: left;
+      font-family: "Sarabun", sans-serif;
+      font-size: 17px;
+      line-height: 150%;
+      color: #4f4f4f;
     }
-    p.toptext{
-        font-size: 19px;
-        font-weight: bold;
+    p.toptext {
+      font-size: 19px;
+      font-weight: bold;
     }
-    ul li{
+    ul li {
       list-style-type: none;
       margin-left: -20px;
       line-height: 170%;
     }
     ul li::before {
-     content: '\2192';
-     padding-right: 10px;
+      content: "\2192";
+      padding-right: 10px;
     }
   }
 }
 
-  @media only screen and (max-width: 768px) {
-    #howitworkssection{
-      .videoSection{
-        padding-top: 6%;
-        padding-bottom: 5%;
-        video{
-            width: 80vw;
-            height: 60vh;
-        }
-    }
+@media only screen and (max-width: 768px) {
+  #howitworkssection {
+    .videoSection {
+      padding-top: 6%;
+      padding-bottom: 5%;
+      video {
+        width: 80vw;
+        height: 60vh;
+      }
     }
   }
+}
 
-  @media only screen and (max-width: 435px) {
-    #howitworkssection{
-      .videoSection{
-        video{
-            width: 83vw;
-            height: 35vh;
-        }
-    }
+@media only screen and (max-width: 435px) {
+  #howitworkssection {
+    .videoSection {
+      video {
+        width: 83vw;
+        height: 35vh;
+      }
     }
   }
+}
