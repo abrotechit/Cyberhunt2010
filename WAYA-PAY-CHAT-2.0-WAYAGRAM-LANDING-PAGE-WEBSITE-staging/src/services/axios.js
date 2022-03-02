@@ -1,7 +1,7 @@
-import axios from 'axios'
+import axios from "axios";
 // import { history } from '..';
-export const baseURL = 'https://wayapay.herokuapp.com/api/';
-export const imageUrl = "https://wayapay.herokuapp.com"
+export const baseURL = "https://wayapay.herokuapp.com/api/";
+export const imageUrl = "https://wayapay.herokuapp.com";
 
 // export function handleResponse(response) {
 //   return response.text().then((text) => {
@@ -25,27 +25,26 @@ export const imageUrl = "https://wayapay.herokuapp.com"
 
 const apiClient = axios.create({
   baseURL,
-})
+});
 
-apiClient.interceptors.request.use(request => {
-  const userData = JSON.parse(localStorage.getItem('user_data'))
+apiClient.interceptors.request.use((request) => {
+  const userData = JSON.parse(localStorage.getItem("user_data"));
   if (userData && userData.token) {
-    request.headers.Authorization = `Bearer ${userData.token}`
+    request.headers.Authorization = `Bearer ${userData.token}`;
     // request.headers.token = userData.token
   }
-  return request
-})
+  return request;
+});
 
-apiClient.interceptors.response.use(undefined, error => {
+apiClient.interceptors.response.use(undefined, (error) => {
   // Errors handling
-  const { response } = error
-  console.log(error, response)
+  const { response } = error;
+  console.log(error, response);
   // if (response.status === 401 && response.statusText === "Unauthorized") {
   //   localStorage.removeItem('user_data')
   //   history.push("/")
   // }
-  return response
+  return response;
+});
 
-})
-
-export default apiClient
+export default apiClient;
